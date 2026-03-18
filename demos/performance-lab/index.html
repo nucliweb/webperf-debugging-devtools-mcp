@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Lab - Demo</title>
+    <!-- Render-blocking CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Render-blocking JS (Simulated) -->
+    <script src="heavy.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Web Performance Lab</h1>
+        <p>This lab contains intentional performance issues to practice with Gemini + MCP.</p>
+    </header>
+
+    <main>
+        <!-- LCP Issue: Large unoptimized image without fetchpriority -->
+        <section id="hero">
+            <h2>Page Hero (LCP Candidate)</h2>
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=4000&auto=format&fit=crop" 
+                 alt="Deep space" 
+                 id="lcp-image">
+            <p>This image is heavy and has no loading optimizations (lazy loading, fetchpriority, etc.).</p>
+        </section>
+
+        <section id="interactive">
+            <h2>Interactivity (Long Task)</h2>
+            <button id="heavy-task-btn">Run heavy task (JS Long Task)</button>
+            <p id="status-text"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Workshop: Web Performance Debugging with Gemini + Chrome DevTools MCP</p>
+    </footer>
+
+    <script src="script.min.js"></script>
+</body>
+</html>
