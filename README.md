@@ -2,6 +2,12 @@
 
 ![Build [>] debug & deploy with AI](./assets/geminicli.png)
 
+<div align="center">
+
+[Español](./README.es.md) · [Català](./README.cat.md)
+
+</div>
+
 Learn to diagnose and resolve web performance issues using [Google Gemini](https://geminicli.com/) and [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp).
 
 ## Agenda

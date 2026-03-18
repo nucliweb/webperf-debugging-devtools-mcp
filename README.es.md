@@ -2,6 +2,12 @@
 
 ![Build [>] debug & deploy with AI](./assets/geminicli.png)
 
+<div align="center">
+
+[English](./README.md) · [Català](./README.cat.md)
+
+</div>
+
 Aprende a diagnosticar y resolver problemas de rendimiento web utilizando [Google Gemini](https://geminicli.com/) y [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp).
 
 ## Agenda
@@ -17,7 +23,7 @@ Aprende a diagnosticar y resolver problemas de rendimiento web utilizando [Googl
 
 ## Estructura del Repositorio
 
-- `docs/`: Guías de instalación, conceptos técnicos, glosario (`reference.md`) y flujos avanzados (`workflows.md`).
+- `docs/`: Guías de instalación, conceptos técnicos, glosario (`reference.es.md`) y flujos avanzados (`workflows.es.md`).
 - `exercises/`: Guías paso a paso para cada una de las fases del workshop.
   - `01-manual-analysis/`: Análisis tradicional sin ayuda de IA.
   - `02-mcp-minified/`: Uso de MCP en entornos de producción (código ofuscado).

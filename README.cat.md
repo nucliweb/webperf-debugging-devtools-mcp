@@ -2,6 +2,12 @@
 
 ![Build [>] debug & deploy with AI](./assets/geminicli.png)
 
+<div align="center">
+
+[English](./README.md) · [Español](./README.es.md)
+
+</div>
+
 Aprèn a diagnosticar i resoldre problemes de rendiment web utilitzant [Google Gemini](https://geminicli.com/) i [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp).
 
 ## Agenda
@@ -17,7 +23,7 @@ Aprèn a diagnosticar i resoldre problemes de rendiment web utilitzant [Google G
 
 ## Estructura del Repositori
 
-- `docs/`: Guies d'instal·lació, conceptes tècnics, glossari (`reference.md`) i fluxos avançats (`workflows.md`).
+- `docs/`: Guies d'instal·lació, conceptes tècnics, glossari (`reference.cat.md`) i fluxos avançats (`workflows.cat.md`).
 - `exercises/`: Guies pas a pas per a cadascuna de les fases del workshop.
   - `01-manual-analysis/`: Anàlisi tradicional sense ajuda de IA.
   - `02-mcp-minified/`: Ús de MCP en entorns de producció (codi ofuscat).
