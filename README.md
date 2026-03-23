@@ -44,3 +44,7 @@ Learn to diagnose and resolve web performance issues using [Google Gemini](https
 ## Installation and Configuration
 
 Check the detailed guide at [docs/setup.md](docs/setup.md) to get started.
+
+## About me
+
+[![Joan Leon](./assets/about.webp)](https://slides.com/joanleon/about)

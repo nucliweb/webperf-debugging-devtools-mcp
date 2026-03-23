@@ -44,3 +44,7 @@ Aprèn a diagnosticar i resoldre problemes de rendiment web utilitzant [Google G
 ## Instal·lació i Configuració
 
 Consulta la guia detallada a [docs/setup.md](docs/setup.md) per a començar.
+
+## Sobre mi
+
+[![Joan Leon](./assets/about.webp)](https://slides.com/joanleon/about)

@@ -44,3 +44,7 @@ Aprende a diagnosticar y resolver problemas de rendimiento web utilizando [Googl
 ## Instalación y Configuración
 
 Consulta la guía detallada en [docs/setup.md](docs/setup.md) para comenzar.
+
+## Sobre mí
+
+[![Joan Leon](./assets/about.webp)](https://slides.com/joanleon/about)
