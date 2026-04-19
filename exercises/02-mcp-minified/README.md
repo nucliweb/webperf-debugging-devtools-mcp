@@ -9,12 +9,15 @@ Make sure you have MCP configured (see [docs/setup.md](../../docs/setup.md)).
 ## Step 2: Analysis with MCP
 
 Ask your agent:
+
 > "Open http://localhost:3000. Start a performance trace, click the 'Run heavy task' button, and stop the trace. Identify which function is causing the Long Task."
 
 ### The Problem
+
 The agent will tell you something like: "The function `a()` in `script.min.js` took 2000ms."
 
-**Reflection**: 
+**Reflection**:
+
 - Do you know what function `a()` does? No.
 - Can you find it in your original source code? It's difficult.
 - In production, variable and function names are obfuscated to save space.

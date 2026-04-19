@@ -18,14 +18,15 @@ This is the key moment. Up to now, the agent has been working **without any spec
 
 Run the command for your tool from the **project root**:
 
-| Tool | Action |
-|---|---|
-| **Gemini CLI** | `mv _GEMINI.md GEMINI.md` |
-| **Claude Code** | `mv _CLAUDE.md CLAUDE.md` |
-| **Codex CLI** | `mv _AGENTS.md AGENTS.md` |
-| **Cursor** | Cursor Settings → Rules → Enable `_webperf-workshop` |
+| Tool            | Action                                               |
+| --------------- | ---------------------------------------------------- |
+| **Gemini CLI**  | `mv _GEMINI.md GEMINI.md`                            |
+| **Claude Code** | `mv _CLAUDE.md CLAUDE.md`                            |
+| **Codex CLI**   | `mv _AGENTS.md AGENTS.md`                            |
+| **Cursor**      | Cursor Settings → Rules → Enable `_webperf-workshop` |
 
 > **What changes from now on?**
+>
 > - The agent explains which MCP tool it is calling and why, before calling it
 > - Findings always include: file, exact line, and task duration
 > - The agent waits for an explicit **Directive** before modifying any file

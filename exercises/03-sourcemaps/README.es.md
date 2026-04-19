@@ -18,14 +18,15 @@ Este es el momento clave. Hasta ahora el agente ha trabajado **sin instrucciones
 
 Ejecuta el comando de tu herramienta desde la **raíz del proyecto**:
 
-| Herramienta | Acción |
-|---|---|
-| **Gemini CLI** | `mv _GEMINI.md GEMINI.md` |
-| **Claude Code** | `mv _CLAUDE.md CLAUDE.md` |
-| **Codex CLI** | `mv _AGENTS.md AGENTS.md` |
-| **Cursor** | Cursor Settings → Rules → Activar `_webperf-workshop` |
+| Herramienta     | Acción                                                |
+| --------------- | ----------------------------------------------------- |
+| **Gemini CLI**  | `mv _GEMINI.md GEMINI.md`                             |
+| **Claude Code** | `mv _CLAUDE.md CLAUDE.md`                             |
+| **Codex CLI**   | `mv _AGENTS.md AGENTS.md`                             |
+| **Cursor**      | Cursor Settings → Rules → Activar `_webperf-workshop` |
 
 > **¿Qué cambia a partir de ahora?**
+>
 > - El agente explica qué herramienta MCP va a usar y por qué, antes de llamarla
 > - Los hallazgos siempre incluyen: archivo, línea exacta y duración de la tarea
 > - El agente espera una **Directiva** explícita antes de modificar cualquier archivo

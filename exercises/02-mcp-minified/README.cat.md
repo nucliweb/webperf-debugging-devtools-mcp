@@ -9,12 +9,15 @@ Assegura't de tenir el MCP configurat (veure [docs/setup.md](../../docs/setup.md
 ## Pas 2: Anàlisi amb MCP
 
 Demana a l'agent el següent:
+
 > "Obre http://localhost:3000. Inicia una traça de performance, prem el botó 'Executar tasca pesada' i atura la traça. Identifica quina funció està causant el Long Task."
 
 ### El Problema
+
 L'agent et dirà alguna cosa com: "La funció `a()` a `script.min.js` ha trigat 2000ms".
 
-**Reflexió**: 
+**Reflexió**:
+
 - Saps què fa la funció `a()`? No.
 - Pots trobar-la en el teu codi font original? És difícil.
 - En producció, els noms de variables i funcions s'ofusquen per a estalviar espai.

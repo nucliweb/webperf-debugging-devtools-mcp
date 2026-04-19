@@ -18,14 +18,15 @@ Aquest és el moment clau. Fins ara l'agent ha treballat **sense instruccions es
 
 Executa la comanda de la teva eina des de l'**arrel del projecte**:
 
-| Eina | Acció |
-|---|---|
-| **Gemini CLI** | `mv _GEMINI.md GEMINI.md` |
-| **Claude Code** | `mv _CLAUDE.md CLAUDE.md` |
-| **Codex CLI** | `mv _AGENTS.md AGENTS.md` |
-| **Cursor** | Cursor Settings → Rules → Activar `_webperf-workshop` |
+| Eina            | Acció                                                 |
+| --------------- | ----------------------------------------------------- |
+| **Gemini CLI**  | `mv _GEMINI.md GEMINI.md`                             |
+| **Claude Code** | `mv _CLAUDE.md CLAUDE.md`                             |
+| **Codex CLI**   | `mv _AGENTS.md AGENTS.md`                             |
+| **Cursor**      | Cursor Settings → Rules → Activar `_webperf-workshop` |
 
 > **Què canvia a partir d'ara?**
+>
 > - L'agent explica quina eina MCP farà servir i per què, abans de cridar-la
 > - Els resultats sempre inclouen: arxiu, línia exacta i durada de la tasca
 > - L'agent espera una **Directiva** explícita abans de modificar cap arxiu
