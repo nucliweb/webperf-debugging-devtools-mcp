@@ -8,12 +8,12 @@ Per a utilitzar el **Chrome DevTools MCP** amb el teu agent de IA, segueix els p
 - **[Google Chrome](https://www.google.com/chrome/)** (versió estable o superior).
 - **El teu agent de IA** — instal·la un dels següents:
 
-| Agent | Instal·lació |
-|---|---|
-| [Gemini CLI](https://geminicli.com/) | `npm install -g @google/gemini-cli` |
-| [Claude Code](https://claude.ai/code) | `npm install -g @anthropic-ai/claude-code` |
-| [Codex CLI](https://github.com/openai/codex) | `npm install -g @openai/codex` |
-| [Cursor](https://cursor.sh/) | Descarrega i instal·la l'app d'escriptori |
+| Agent                                        | Instal·lació                               |
+| -------------------------------------------- | ------------------------------------------ |
+| [Gemini CLI](https://geminicli.com/)         | `npm install -g @google/gemini-cli`        |
+| [Claude Code](https://claude.ai/code)        | `npm install -g @anthropic-ai/claude-code` |
+| [Codex CLI](https://github.com/openai/codex) | `npm install -g @openai/codex`             |
+| [Cursor](https://cursor.sh/)                 | Descarrega i instal·la l'app d'escriptori  |
 
 ## 2. Instal·lació de Chrome DevTools MCP
 
@@ -103,7 +103,7 @@ Instal·la el paquet complet de `webperf-snippets` directament:
 npx skills add nucliweb/webperf-snippets
 ```
 
-Això instal·larà les habilitats en el teu directori de configuració global de IA (normalment `~/.claude/skills/`, `~/.gemini/skills/` o similar segons el teu agent).
+Això instal·larà les SKILLs en el teu directori de configuració global de IA (normalment `~/.claude/skills/`, `~/.gemini/skills/` o similar segons el teu agent).
 
 ## 4. Modes d'Execució
 
@@ -155,6 +155,6 @@ El MCP es connectarà automàticament si has afegit els flags `--autoConnect` i 
 
 Una vegada configurat tot, pregunta al teu agent:
 
-> "Pots obrir la web https://web.dev i dir-me quin és el valor de LCP usant les teves habilitats de webperf?"
+> "Pots obrir la web https://web.dev i dir-me quin és el valor de LCP usant les teves SKILLs de webperf?"
 
 Si la configuració és correcta, l'agent usarà el MCP per a navegar i els snippets de `webperf-snippets` per a donar-te un diagnòstic tècnic.

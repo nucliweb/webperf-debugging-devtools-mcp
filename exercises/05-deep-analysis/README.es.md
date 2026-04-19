@@ -1,6 +1,6 @@
 # Ejercicio 5: Análisis Profundo y SKILLs Externas (Vercel & Next.js)
 
-En este paso final, utilizaremos una aplicación de **Next.js** llena de anti-patrones de rendimiento para ver cómo el agente, apoyado por habilidades especializadas de Vercel y contexto extendido, puede limpiar y optimizar nuestro código.
+En este paso final, utilizaremos una aplicación de **Next.js** llena de anti-patrones de rendimiento para ver cómo el agente, apoyado por SKILLs especializadas de Vercel y contexto extendido, puede limpiar y optimizar nuestro código.
 
 ## Paso 1: Levantar la aplicación de Next.js
 
@@ -61,13 +61,13 @@ La regla está con scope a `demos/nextjs-performance-app/**` — se aplica autom
 
 ## Paso 3: Instalación de SKILLs de Vercel
 
-Instalaremos las habilidades oficiales de Vercel para mejores prácticas en React y Next.js:
+Instalaremos las SKILLs oficiales de Vercel para mejores prácticas en React y Next.js:
 
 ```bash
 npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices
 ```
 
-_Nota: Estas habilidades contienen reglas específicas para detectar usos incorrectos de `useEffect`, `useMemo`, y optimizaciones de Next.js._
+_Nota: Estas SKILLs contienen reglas específicas para detectar usos incorrectos de `useEffect`, `useMemo`, y optimizaciones de Next.js._
 
 ### ¿Cómo funciona el análisis autónomo?
 
@@ -87,7 +87,7 @@ graph TD
 
 Pide al agente lo siguiente desde la raíz del proyecto:
 
-> "Analiza el archivo `demos/nextjs-performance-app/src/app/page.tsx`. Utiliza tus habilidades de `vercel-react-best-practices` para identificar todos los problemas de rendimiento. Explícame por qué son anti-patrones y propón una versión optimizada del archivo."
+> "Analiza el archivo `demos/nextjs-performance-app/src/app/page.tsx`. Utiliza tus SKILLs de `vercel-react-best-practices` para identificar todos los problemas de rendimiento. Explícame por qué son anti-patrones y propón una versión optimizada del archivo."
 
 ### ¿Qué buscará el agente?
 
@@ -110,7 +110,7 @@ Una vez el agente te dé la solución:
 
 Cuando desarrollas con agentes, el agente no tiene ningún incentivo inherente para preservar el rendimiento. Sin restricciones explícitas en su contexto, cada nueva feature es una regresión potencial. La solución es codificar las reglas de rendimiento directamente en el contexto del agente — no solo para sesiones de análisis, sino de forma permanente.
 
-Las [`agent-skills` de Addy Osmani](https://github.com/addyosmani/agent-skills) son una colección de habilidades de ingeniería de nivel producción para agentes de IA. Su skill [`performance-optimization`](https://github.com/addyosmani/agent-skills/tree/main/skills/performance-optimization) enseña al agente a:
+Las [`agent-skills` de Addy Osmani](https://github.com/addyosmani/agent-skills) son una colección de SKILLs de ingeniería de nivel producción para agentes de IA. Su skill [`performance-optimization`](https://github.com/addyosmani/agent-skills/tree/main/skills/performance-optimization) enseña al agente a:
 
 - **Medir antes de optimizar** — perfilar primero, nunca adivinar
 - **Respetar los umbrales de Core Web Vitals** — LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1
