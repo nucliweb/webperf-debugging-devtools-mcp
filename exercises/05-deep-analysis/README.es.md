@@ -26,26 +26,34 @@ Estás a punto de convertir tu agente en un experto en rendimiento React y Next.
 Elige el método para tu herramienta:
 
 ### Gemini CLI
+
 Añade las reglas de React/Next.js a tu `GEMINI.md` activo:
+
 ```bash
 cat exercises/05-deep-analysis/_rules-react-nextjs.md >> GEMINI.md
 ```
 
 ### Claude Code
+
 En tu `CLAUDE.md`, descomenta la línea de `@import`:
+
 ```diff
 - <!-- @exercises/05-deep-analysis/_rules-react-nextjs.md -->
 + @exercises/05-deep-analysis/_rules-react-nextjs.md
 ```
+
 El prefijo `@` indica a Claude Code que cargue el contenido de ese archivo directamente en el contexto — sin copiar y pegar. Así es como se compone el contexto del agente desde múltiples fuentes.
 
 ### Codex CLI
+
 Añade las reglas de React/Next.js a tu `AGENTS.md` activo:
+
 ```bash
 cat exercises/05-deep-analysis/_rules-react-nextjs.md >> AGENTS.md
 ```
 
 ### Cursor
+
 Ve a **Cursor Settings → Rules** y activa `_webperf-ex05`.
 La regla está con scope a `demos/nextjs-performance-app/**` — se aplica automáticamente cuando esos archivos están en contexto.
 
@@ -93,6 +101,54 @@ Una vez el agente te dé la solución:
 
 1. Da una **Directiva** explícita para aplicar los cambios (p.ej., "Adelante", "Aplícalo").
 2. Vuelve al navegador (con el MCP activo) y realiza una nueva traza de performance para verificar que los bloqueos han desaparecido y la interactividad es fluida.
+
+---
+
+## Bonus: Guardarraíles Genéricos de Rendimiento para el Desarrollo Asistido por IA
+
+> Cada vez que un agente genera una nueva feature, puede introducir una regresión de rendimiento. Las reglas específicas de framework (React, Next.js) ayudan a corregir anti-patrones conocidos. Los guardarraíles genéricos evitan que se introduzcan regresiones desde el principio.
+
+Cuando desarrollas con agentes, el agente no tiene ningún incentivo inherente para preservar el rendimiento. Sin restricciones explícitas en su contexto, cada nueva feature es una regresión potencial. La solución es codificar las reglas de rendimiento directamente en el contexto del agente — no solo para sesiones de análisis, sino de forma permanente.
+
+Las [`agent-skills` de Addy Osmani](https://github.com/addyosmani/agent-skills) son una colección de habilidades de ingeniería de nivel producción para agentes de IA. Su skill [`performance-optimization`](https://github.com/addyosmani/agent-skills/tree/main/skills/performance-optimization) enseña al agente a:
+
+- **Medir antes de optimizar** — perfilar primero, nunca adivinar
+- **Respetar los umbrales de Core Web Vitals** — LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1
+- **Detectar anti-patrones comunes** — consultas N+1, imágenes sin dimensiones, crecimiento descontrolado del bundle, caché ausente
+
+### Instalación
+
+**Claude Code**:
+
+```
+/plugin marketplace add addyosmani/agent-skills
+/plugin install agent-skills@addy-agent-skills
+```
+
+**Gemini CLI**:
+
+```bash
+gemini skills install https://github.com/addyosmani/agent-skills.git --path skills
+```
+
+**Cursor**: Copia `skills/performance-optimization/SKILL.md` en `.cursor/rules/`
+
+**Codex / otros agentes**: Las skills son Markdown plano — añade el contenido a `AGENTS.md`:
+
+```bash
+curl -s https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/performance-optimization/SKILL.md >> AGENTS.md
+```
+
+### Dos capas, un mismo objetivo
+
+| Capa                                       | Qué hace                                                      |
+| ------------------------------------------ | ------------------------------------------------------------- |
+| **Skills de framework** (Vercel, React)    | Corrige anti-patrones conocidos en el código existente        |
+| **Guardarraíles genéricos** (agent-skills) | Previene nuevas regresiones antes de que lleguen a producción |
+
+Ambas capas juntas son lo que mantiene el rendimiento sostenible a medida que crece un codebase asistido por IA.
+
+> **¿Y si el agente ignora los guardarraíles?** Con el contexto sobrecargado o en sesiones largas, el agente puede derivar y generar código que no respeta las reglas — aunque las skills estén cargadas. La solución natural es un agente auditor independiente que revise el resultado con independencia de cómo se haya comportado el agente generador. El [RFC `web-performance-auditor`](https://github.com/addyosmani/agent-skills/issues/85) propone exactamente esto para `agent-skills`. Si el problema te interesa, es una buena issue donde contribuir.
 
 ---
 
