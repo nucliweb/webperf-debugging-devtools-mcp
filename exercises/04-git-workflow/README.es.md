@@ -1,6 +1,6 @@
 # Ejercicio 4: Automatización Total. Rama, Commit y PR.
 
-Ahora que Gemini sabe exactamente qué está fallando, vamos a pedirle que lo arregle siguiendo nuestro flujo de trabajo de Git.
+Ahora que el agente sabe exactamente qué está fallando, vamos a pedirle que lo arregle siguiendo nuestro flujo de trabajo de Git.
 
 ## Requisitos
 
@@ -12,16 +12,16 @@ Asegúrate de estar en una rama limpia (`git checkout -b workshop-start`).
 
 ## Paso 2: El Fix Autónomo
 
-Pide a Gemini lo siguiente:
+Pide al agente lo siguiente:
 
 > "He visto que el archivo `demos/sourcemaps-app/src/App.tsx` tiene un bloqueo en el `useEffect`. Crea una nueva rama llamada `fix/perf-app-lag`, soluciona el problema de rendimiento, haz el commit, Pull Request y describe el cambio. Añade una etiqueta `webperf-fix` a la PR."
 
-### Lo que Gemini hará:
+### Lo que el agente hará:
 
-1.  Creará una rama de git.
-2.  Arreglará el código (ej. eliminando el loop innecesario).
-3.  Hará el `git commit`, `git push` y PR (necesitará `GitHub CLI`).
-4.  Te pedirá que revises la solución.
+1. Creará una rama de git.
+2. Arreglará el código (ej. eliminando el loop innecesario).
+3. Hará el `git commit`, `git push` y PR (necesitará `GitHub CLI`).
+4. Te pedirá que revises la solución.
 
 **Reflexión**:
 

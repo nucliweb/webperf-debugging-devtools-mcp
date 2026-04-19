@@ -1,33 +1,49 @@
 # Guia d'Instal·lació i Configuració
 
-Per a utilitzar el **Chrome DevTools MCP** amb **Google Gemini**, segueix els passos a continuació.
+Per a utilitzar el **Chrome DevTools MCP** amb el teu agent de IA, segueix els passos a continuació.
 
 ## 1. Requisits de Programari
 
 - **[Node.js](https://nodejs.org/) v20.19 o superior** (LTS recomanat).
 - **[Google Chrome](https://www.google.com/chrome/)** (versió estable o superior).
-- **[Google Gemini CLI](https://geminicli.com/)** instal·lat.
+- **El teu agent de IA** — instal·la un dels següents:
+
+| Agent | Instal·lació |
+|---|---|
+| [Gemini CLI](https://geminicli.com/) | `npm install -g @google/gemini-cli` |
+| [Claude Code](https://claude.ai/code) | `npm install -g @anthropic-ai/claude-code` |
+| [Codex CLI](https://github.com/openai/codex) | `npm install -g @openai/codex` |
+| [Cursor](https://cursor.sh/) | Descarrega i instal·la l'app d'escriptori |
 
 ## 2. Instal·lació de Chrome DevTools MCP
 
-El Chrome DevTools MCP permet que Gemini es comuniqui amb el navegador.
+El Chrome DevTools MCP permet que el teu agent es comuniqui amb el navegador. Tria el mètode segons la teva eina.
 
-### Instal·lació i Configuració amb Gemini CLI (Recomanat)
-
-Si uses el **Gemini CLI**, pots instal·lar i configurar el servidor directament amb aquest comandament:
+### Gemini CLI
 
 ```bash
 gemini mcp add chrome-devtools npx -y chrome-devtools-mcp@latest --autoConnect --port=9222
 ```
 
-#### On es guarda aquesta configuració?
+Configuració guardada a `~/.gemini/settings.json`.
 
-El CLI de Gemini emmagatzema aquesta informació en un arxiu JSON global. En macOS i Linux, la ruta és:
-`~/.gemini/settings.json`
+### Claude Code
 
-_(En executar el comandament anterior, el CLI actualitzarà automàticament la secció `mcpServers` d'aquest arxiu)._
+```bash
+claude mcp add chrome-devtools -- npx -y chrome-devtools-mcp@latest --autoConnect --port=9222
+```
 
-### Configuració manual (Altres clients)
+Per a instal·lar-lo globalment (disponible a tots els projectes):
+
+```bash
+claude mcp add --scope user chrome-devtools -- npx -y chrome-devtools-mcp@latest --autoConnect --port=9222
+```
+
+Configuració guardada a `.mcp.json` (projecte) o `~/.claude/settings.json` (usuari).
+
+### Cursor
+
+Ves a **Settings → MCP** i afegeix un nou servidor, o edita `~/.cursor/mcp.json` directament:
 
 ```json
 {
@@ -40,12 +56,40 @@ _(En executar el comandament anterior, el CLI actualitzarà automàticament la s
 }
 ```
 
-> **Nota per a altres clients**: Depenent del teu editor (Cursor, VS Code, Claude Desktop), l'arxiu de configuració pot variar (ex. `claude_desktop_config.json`). Consulta la documentació específica de la teva eina.
+### Codex CLI
 
-### Flags:
+Edita el teu arxiu de configuració de Codex (consulta la [documentació de Codex CLI](https://github.com/openai/codex) per a la ruta exacta):
 
-- `--autoConnect`: Indica al servidor MCP que intenti connectar-se automàticament a una instància de Chrome que ja estigui oberta.
-- `--port=9222`: Especifica el port de depuració remota (`remote-debugging-port`) en el qual Chrome està escoltant. És el port estàndard utilitzat per a la comunicació amb eines externes.
+```json
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest", "--autoConnect", "--port=9222"]
+    }
+  }
+}
+```
+
+### Configuració manual (qualsevol altre client MCP)
+
+```json
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest", "--autoConnect", "--port=9222"]
+    }
+  }
+}
+```
+
+> **Nota**: Depenent del teu editor o client, la ruta de l'arxiu de configuració pot variar. Consulta la documentació específica de la teva eina.
+
+### Flags
+
+- `--autoConnect`: Indica al servidor MCP que es connecti automàticament a una instància de Chrome que ja estigui oberta.
+- `--port=9222`: Especifica el port de depuració remota en el qual Chrome està escoltant. És el port estàndard utilitzat per a la comunicació amb eines externes.
 
 ## 3. Instal·lació de SKILLs (WebPerf Snippets)
 
@@ -59,7 +103,7 @@ Instal·la el paquet complet de `webperf-snippets` directament:
 npx skills add nucliweb/webperf-snippets
 ```
 
-Això instal·larà les habilitats en el teu directori de configuració global de IA (normalment `~/.claude/skills/` o similar per a Gemini).
+Això instal·larà les habilitats en el teu directori de configuració global de IA (normalment `~/.claude/skills/`, `~/.gemini/skills/` o similar segons el teu agent).
 
 ## 4. Modes d'Execució
 
@@ -74,9 +118,9 @@ Si **no** inclous els flags `--autoConnect` i `--port`, el servidor MCP llançar
 
 ### Mode Visible (Debugging i Aprenentatge)
 
-Per a veure què està fent la IA al navegador (útil per a aquest workshop), necessites habilitar el port de depuració remota a Chrome.
+Per a veure què està fent l'agent al navegador (útil per a aquest workshop), necessites habilitar el port de depuració remota a Chrome.
 
-- **Ideal per a:** Aprendre com interactua la IA, fer debugging visualment i aprofitar sessions/cookies ja obertes.
+- **Ideal per a:** Aprendre com interactua l'agent, fer debugging visualment i aprofitar sessions/cookies ja obertes.
 
 #### Opció A: Des de la terminal (Recomanat)
 
@@ -109,8 +153,8 @@ El MCP es connectarà automàticament si has afegit els flags `--autoConnect` i 
 
 ## 5. Verificació
 
-Una vegada configurat tot, pots preguntar a Gemini:
+Una vegada configurat tot, pregunta al teu agent:
 
 > "Pots obrir la web https://web.dev i dir-me quin és el valor de LCP usant les teves habilitats de webperf?"
 
-Si la configuració és correcta, Gemini usarà el MCP per a navegar i els snippets de `webperf-snippets` per a donar-te un diagnòstic tècnic.
+Si la configuració és correcta, l'agent usarà el MCP per a navegar i els snippets de `webperf-snippets` per a donar-te un diagnòstic tècnic.

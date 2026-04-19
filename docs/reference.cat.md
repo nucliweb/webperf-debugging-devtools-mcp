@@ -20,7 +20,7 @@ En el món dels Agents de IA i el desenvolupament assistit, sovint es confonen d
 
 ### 3. Rules (Project / Global Rules)
 
-Són **instruccions de comportament** i estil. Arxius com `GEMINI.md`, `.cursorrules` o `.claude/rules` que dicten com ha de respondre l'agent, quins estàndards de codi seguir o què evitar.
+Són **instruccions de comportament** i estil. Arxius com `_GEMINI.md`, `_CLAUDE.md`, `_AGENTS.md` o `.cursor/rules/` que dicten com ha de respondre l'agent, quins estàndards de codi seguir o què evitar.
 
 - **Enfocament:** Guies d'estil, normes de seguretat i context local.
 
@@ -32,10 +32,9 @@ Són les **entitats executores**. Un agent és la IA configurada amb accés a ei
 
 ### 5. Plugins / Extensions
 
-Sovint s'utilitzen de forma intercanviable amb "MCP Servers". Són complements que afegeixen capacitats específiques a una plataforma (com Gemini CLI o Cursor).
+Sovint s'utilitzen de forma intercanviable amb "MCP Servers". Són complements que afegeixen capacitats específiques a una plataforma (com Gemini CLI, Claude Code o Cursor).
 
 - **Enfocament:** Extensibilitat de la plataforma.
-- **Link Oficial (Gemini Extensions):** [Gemini Extensions Docs](https://github.com/google-gemini/gemini-cli?tab=readme-ov-file#tools--extensions)
 
 ### 6. Commands
 
@@ -82,22 +81,22 @@ mindmap
 
 ## Taula Comparativa Ampliada
 
-| Concepte     | Què és?                 | Exemple Real            |
-| :----------- | :---------------------- | :---------------------- |
-| **MCP**      | El "cable" de connexió  | `chrome-devtools-mcp`   |
-| **Skills**   | El "títol expert"       | `webperf-snippets`      |
-| **Rules**    | El "manual de conducta" | `GEMINI.md`             |
-| **Agents**   | El "treballador"        | Gemini CLI / Sub-agent  |
-| **Hooks**    | "Dades automàtiques"    | Context de mètriques    |
-| **Plugins**  | L'"accessori"           | `gemini-extensions`     |
-| **Commands** | L'"ordre directa"       | `/help`, `/mcp add`     |
-| **Tools**    | El "tornavís"           | `evaluate_script`       |
+| Concepte     | Què és?                  | Exemple Real                                  |
+| :----------- | :----------------------- | :-------------------------------------------- |
+| **MCP**      | El "cable" de connexió   | `chrome-devtools-mcp`                         |
+| **Skills**   | El "títol expert"        | `webperf-snippets`                            |
+| **Rules**    | El "manual de conducta"  | `_GEMINI.md`, `_CLAUDE.md`, `_AGENTS.md`      |
+| **Agents**   | El "treballador"         | Gemini / Claude / Codex / Cursor              |
+| **Hooks**    | "Dades automàtiques"     | Context de mètriques                          |
+| **Plugins**  | L'"accessori"            | Extensions MCP                                |
+| **Commands** | L'"ordre directa"        | `/help`, `/mcp add`                           |
+| **Tools**    | El "tornavís"            | `evaluate_script`                             |
 
 ---
 
 ## Com interactuen en aquest Workshop?
 
-1.  Usem el **MCP** perquè Gemini pugui "veure" i "utilitzar" Chrome DevTools.
-2.  Instal·lem les **Skills** de `webperf-snippets` perquè Gemini sàpiga _què buscar_ i _com analitzar_ el rendiment web.
-3.  Podríem definir **Rules** perquè Gemini sempre ens reporti el LCP en un format de taula específic.
-4.  L'**Agent** (Gemini) orquestrarà tot l'anterior per a donar-nos la solució.
+1.  Usem el **MCP** perquè l'agent pugui "veure" i "utilitzar" Chrome DevTools.
+2.  Instal·lem les **Skills** de `webperf-snippets` perquè l'agent sàpiga _què buscar_ i _com analitzar_ el rendiment web.
+3.  Definim **Regles** perquè l'agent sempre reporti el LCP amb arxiu, línia i durada — i esperi una Directiva abans de modificar arxius.
+4.  L'**Agent** (Gemini, Claude, Codex o Cursor) orquestrarà tot l'anterior per a donar-nos la solució.

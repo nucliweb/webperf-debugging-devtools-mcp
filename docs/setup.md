@@ -1,33 +1,49 @@
 # Installation and Configuration Guide
 
-To use **Chrome DevTools MCP** with **Google Gemini**, follow the steps below.
+To use **Chrome DevTools MCP** with your AI agent, follow the steps below.
 
 ## 1. Software Requirements
 
 - **[Node.js](https://nodejs.org/) v20.19 or higher** (LTS recommended).
 - **[Google Chrome](https://www.google.com/chrome/)** (stable version or higher).
-- **[Google Gemini CLI](https://geminicli.com/)** installed.
+- **Your AI agent** — install one of the following:
+
+| Agent | Install |
+|---|---|
+| [Gemini CLI](https://geminicli.com/) | `npm install -g @google/gemini-cli` |
+| [Claude Code](https://claude.ai/code) | `npm install -g @anthropic-ai/claude-code` |
+| [Codex CLI](https://github.com/openai/codex) | `npm install -g @openai/codex` |
+| [Cursor](https://cursor.sh/) | Download and install the desktop app |
 
 ## 2. Chrome DevTools MCP Installation
 
-The Chrome DevTools MCP allows Gemini to communicate with the browser.
+The Chrome DevTools MCP allows your agent to communicate with the browser. Choose the method for your tool.
 
-### Installation and Configuration with Gemini CLI (Recommended)
-
-If you use the **Gemini CLI**, you can install and configure the server directly with this command:
+### Gemini CLI
 
 ```bash
 gemini mcp add chrome-devtools npx -y chrome-devtools-mcp@latest --autoConnect --port=9222
 ```
 
-#### Where is this configuration saved?
+Configuration saved to `~/.gemini/settings.json`.
 
-The Gemini CLI stores this information in a global JSON file. On macOS and Linux, the path is:
-`~/.gemini/settings.json`
+### Claude Code
 
-_(By running the command above, the CLI will automatically update the `mcpServers` section of that file)._
+```bash
+claude mcp add chrome-devtools -- npx -y chrome-devtools-mcp@latest --autoConnect --port=9222
+```
 
-### Manual configuration (Other clients)
+To install globally (available in all projects):
+
+```bash
+claude mcp add --scope user chrome-devtools -- npx -y chrome-devtools-mcp@latest --autoConnect --port=9222
+```
+
+Configuration saved to `.mcp.json` (project) or `~/.claude/settings.json` (user).
+
+### Cursor
+
+Go to **Settings → MCP** and add a new server, or edit `~/.cursor/mcp.json` directly:
 
 ```json
 {
@@ -40,12 +56,40 @@ _(By running the command above, the CLI will automatically update the `mcpServer
 }
 ```
 
-> **Note for other clients**: Depending on your editor (Cursor, VS Code, Claude Desktop), the configuration file may vary (e.g., `claude_desktop_config.json`). Consult your tool's specific documentation.
+### Codex CLI
 
-### Flags:
+Edit your Codex configuration file (see [Codex CLI documentation](https://github.com/openai/codex) for the exact path):
 
-- `--autoConnect`: Tells the MCP server to try to automatically connect to an already open Chrome instance.
-- `--port=9222`: Specifies the remote debugging port (`remote-debugging-port`) that Chrome is listening on. This is the standard port used for communication with external tools.
+```json
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest", "--autoConnect", "--port=9222"]
+    }
+  }
+}
+```
+
+### Manual configuration (any other MCP-compatible client)
+
+```json
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest", "--autoConnect", "--port=9222"]
+    }
+  }
+}
+```
+
+> **Note**: Depending on your editor or client, the configuration file path may vary. Consult your tool's specific documentation.
+
+### Flags
+
+- `--autoConnect`: Tells the MCP server to automatically connect to an already open Chrome instance.
+- `--port=9222`: Specifies the remote debugging port that Chrome is listening on. This is the standard port used for communication with external tools.
 
 ## 3. SKILLs Installation (WebPerf Snippets)
 
@@ -59,7 +103,7 @@ Install the full `webperf-snippets` package directly:
 npx skills add nucliweb/webperf-snippets
 ```
 
-This will install the skills in your global AI configuration directory (usually `~/.claude/skills/` or similar for Gemini).
+This will install the skills in your global AI configuration directory (usually `~/.claude/skills/`, `~/.gemini/skills/`, or similar depending on your agent).
 
 ## 4. Execution Modes
 
@@ -74,9 +118,9 @@ If you **don't** include the `--autoConnect` and `--port` flags, the MCP server 
 
 ### Visible Mode (Debugging and Learning)
 
-To see what the AI is doing in the browser (useful for this workshop), you need to enable the remote debugging port in Chrome.
+To see what the agent is doing in the browser (useful for this workshop), you need to enable the remote debugging port in Chrome.
 
-- **Ideal for:** Learning how the AI interacts, visual debugging, and taking advantage of already open sessions/cookies.
+- **Ideal for:** Learning how the agent interacts, visual debugging, and taking advantage of already open sessions/cookies.
 
 #### Option A: From the terminal (Recommended)
 
@@ -109,8 +153,8 @@ The MCP will automatically connect if you have added the `--autoConnect` and `--
 
 ## 5. Verification
 
-Once everything is configured, you can ask Gemini:
+Once everything is configured, ask your agent:
 
 > "Can you open the website https://web.dev and tell me what the LCP value is using your webperf skills?"
 
-If the configuration is correct, Gemini will use the MCP to navigate and the `webperf-snippets` snippets to give you a technical diagnosis.
+If the configuration is correct, the agent will use the MCP to navigate and the `webperf-snippets` snippets to give you a technical diagnosis.

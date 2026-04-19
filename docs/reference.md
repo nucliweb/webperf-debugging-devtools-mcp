@@ -20,7 +20,7 @@ It is the **expert knowledge** or "know-how." These are packages containing code
 
 ### 3. Rules (Project / Global Rules)
 
-These are **behavioral and style instructions**. Files like `GEMINI.md`, `.cursorrules`, or `.claude/rules` that dictate how the agent should respond, what code standards to follow, or what to avoid.
+These are **behavioral and style instructions**. Files like `_GEMINI.md`, `_CLAUDE.md`, `_AGENTS.md`, or `.cursor/rules/` that dictate how the agent should respond, what code standards to follow, or what to avoid.
 
 - **Focus:** Style guides, security standards, and local context.
 
@@ -32,10 +32,9 @@ These are the **executing entities**. An agent is the AI configured with access 
 
 ### 5. Plugins / Extensions
 
-They are often used interchangeably with "MCP Servers." These are add-ons that add specific capabilities to a platform (like Gemini CLI or Cursor).
+They are often used interchangeably with "MCP Servers." These are add-ons that add specific capabilities to a platform (like Gemini CLI, Claude Code, or Cursor).
 
 - **Focus:** Platform extensibility.
-- **Official Link (Gemini Extensions):** [Gemini Extensions Docs](https://github.com/google-gemini/gemini-cli?tab=readme-ov-file#tools--extensions)
 
 ### 6. Commands
 
@@ -82,22 +81,22 @@ mindmap
 
 ## Expanded Comparison Table
 
-| Concept      | What is it?             | Real Example            |
-| :----------- | :---------------------- | :---------------------- |
-| **MCP**      | The connection "cable"  | `chrome-devtools-mcp`   |
-| **Skills**   | The "expert degree"     | `webperf-snippets`      |
-| **Rules**    | The "conduct manual"    | `GEMINI.md`             |
-| **Agents**   | The "worker"            | Gemini CLI / Sub-agent  |
-| **Hooks**    | "Automatic data"        | Metrics context         |
-| **Plugins**  | The "accessory"         | `gemini-extensions`     |
-| **Commands** | The "direct order"      | `/help`, `/mcp add`     |
-| **Tools**    | The "screwdriver"       | `evaluate_script`       |
+| Concept      | What is it?             | Real Example                                  |
+| :----------- | :---------------------- | :-------------------------------------------- |
+| **MCP**      | The connection "cable"  | `chrome-devtools-mcp`                         |
+| **Skills**   | The "expert degree"     | `webperf-snippets`                            |
+| **Rules**    | The "conduct manual"    | `_GEMINI.md`, `_CLAUDE.md`, `_AGENTS.md`      |
+| **Agents**   | The "worker"            | Gemini / Claude / Codex / Cursor              |
+| **Hooks**    | "Automatic data"        | Metrics context                               |
+| **Plugins**  | The "accessory"         | MCP extensions                                |
+| **Commands** | The "direct order"      | `/help`, `/mcp add`                           |
+| **Tools**    | The "screwdriver"       | `evaluate_script`                             |
 
 ---
 
 ## How Do They Interact in This Workshop?
 
-1.  We use **MCP** so Gemini can "see" and "use" Chrome DevTools.
-2.  We install the `webperf-snippets` **Skills** so Gemini knows _what to look for_ and _how to analyze_ web performance.
-3.  We could define **Rules** so Gemini always reports the LCP in a specific table format.
-4.  The **Agent** (Gemini) will orchestrate all of the above to give us the solution.
+1.  We use **MCP** so the agent can "see" and "use" Chrome DevTools.
+2.  We install the `webperf-snippets` **Skills** so the agent knows _what to look for_ and _how to analyze_ web performance.
+3.  We define **Rules** so the agent always reports the LCP with file, line, and duration — and waits for a Directive before modifying files.
+4.  The **Agent** (Gemini, Claude, Codex, or Cursor) will orchestrate all of the above to give us the solution.

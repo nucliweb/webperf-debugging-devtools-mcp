@@ -1,14 +1,14 @@
 # Advanced Workflows for Real Projects
 
-This document contains examples of workflows you can implement in your daily projects using Gemini + Chrome DevTools MCP.
+This document contains examples of workflows you can implement in your daily projects using any AI agent + Chrome DevTools MCP.
 
 ## 1. Performance Audit in CI/CD (Headless)
 
-You can configure Gemini to perform an automatic audit on every Pull Request before the code reaches production.
+You can configure your agent to perform an automatic audit on every Pull Request before the code reaches production.
 
 ```mermaid
 graph LR
-    A[Git Push / PR] --> B[CI Trigger: Gemini]
+    A[Git Push / PR] --> B[CI Trigger: AI Agent]
     B --> C[MCP: Navigate to Preview URL]
     C --> D[Core Web Vitals Analysis]
     D --> E{Regression > 10%?}
@@ -36,7 +36,7 @@ Ideal for e-commerce sites or blogs with many visual assets.
 
 ## 3. Detection of Visual Regressions and Layout Shift (CLS)
 
-Use Gemini's ability to compare DOM states and performance traces.
+Use the agent's ability to compare DOM states and performance traces.
 
 **Suggested Prompt:**
 
@@ -66,9 +66,9 @@ graph TD
 
 ## How to Automate These Workflows?
 
-You can save these prompts as **Custom Rules** in your project (`GEMINI.md` file) so the agent always keeps them in mind as standard operating protocols.
+You can save these prompts as **Rules** in your project so the agent always keeps them in mind as standard operating protocols. Each tool uses its own file format — activate the one that corresponds to your agent (see Exercise 3).
 
-**Example of `GEMINI.md`:**
+**Example of rules file content:**
 
 ```markdown
 # Project Performance Rules
@@ -79,3 +79,10 @@ Whenever you analyze a Pull Request or make a code change:
 2. If LCP exceeds 2.5s, automatically run the `webperf-core-web-vitals` skill to find the cause.
 3. Ensure all "Above the fold" images in a mobile viewport have the `fetchpriority="high"` attribute, and all other images (Below the fold) have `loading="lazy"`.
 ```
+
+| Tool | Rules file |
+|---|---|
+| Gemini CLI | `GEMINI.md` (project root) |
+| Claude Code | `CLAUDE.md` (project root) |
+| Codex CLI | `AGENTS.md` (project root) |
+| Cursor | `.cursor/rules/*.mdc` |

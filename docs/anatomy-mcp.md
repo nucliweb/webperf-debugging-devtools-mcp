@@ -4,27 +4,27 @@ Before diving into the analysis, it's essential to understand the two technologi
 
 ## 1. What is the Model Context Protocol (MCP)?
 
-The **Model Context Protocol (MCP)** is an open standard that allows AI models (like Gemini or Claude) to securely connect with external data sources and tools. In our case, the MCP acts as a "driver" that gives Gemini direct access to the internal APIs of Chrome DevTools.
+The **Model Context Protocol (MCP)** is an open standard that allows AI models (like Gemini, Claude, or Codex) to securely connect with external data sources and tools. In our case, the MCP acts as a "driver" that gives the agent direct access to the internal APIs of Chrome DevTools.
 
-- **What it's for:** It allows the AI to navigate websites, record performance traces, analyze the network, and capture screenshots autonomously.
+- **What it's for:** It allows the agent to navigate websites, record performance traces, analyze the network, and capture screenshots autonomously.
 - **Official documentation:** [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
 
 ## 2. What are Agent Skills?
 
-**Agent Skills** are sets of predefined knowledge and capabilities granted to an AI agent. Unlike the MCP (which is the "connection"), SKILLs are the "know-how." They include code snippets, workflows, and decision trees that guide the AI to solve specific problems.
+**Agent Skills** are sets of predefined knowledge and capabilities granted to an AI agent. Unlike the MCP (which is the "connection"), SKILLs are the "know-how." They include code snippets, workflows, and decision trees that guide the agent to solve specific problems.
 
-- **What it's for:** They allow Gemini to know which JavaScript snippets to run if LCP is slow, how to interpret a network waterfall, or what suggestions to give for optimizing an image.
+- **What it's for:** They allow the agent to know which JavaScript snippets to run if LCP is slow, how to interpret a network waterfall, or what suggestions to give for optimizing an image.
 - **Official documentation:** [Agent Skills](https://agentskills.io/)
 
 ---
 
-# Anatomy of the MCP: How Gemini Interacts with Chrome
+# Anatomy of the MCP: How the Agent Interacts with Chrome
 
-The Model Context Protocol (MCP) works as a standardized bridge between Gemini and internal Chrome DevTools tools.
+The Model Context Protocol (MCP) works as a standardized bridge between your AI agent and Chrome DevTools' internal tools.
 
 ## From Tools to LLM Capabilities
 
-When you install the Chrome DevTools MCP server, you are exposing more than 25 tools directly to Gemini. Some of the most interesting ones for Web Performance are:
+When you install the Chrome DevTools MCP server, you are exposing more than 25 tools directly to the agent. Some of the most interesting ones for Web Performance are:
 
 | Tool                      | Action in Chrome DevTools                                  |
 | :------------------------ | :--------------------------------------------------------- |
@@ -40,25 +40,25 @@ When you install the Chrome DevTools MCP server, you are exposing more than 25 t
 ```mermaid
 sequenceDiagram
     participant U as User
-    participant G as Gemini
+    participant A as AI Agent
     participant M as MCP Server
     participant C as Chrome
 
-    U->>G: "Analyze the LCP of this page"
-    G->>M: navigate_page(url)
+    U->>A: "Analyze the LCP of this page"
+    A->>M: navigate_page(url)
     M->>C: CDP Protocol: Page.navigate
-    G->>M: performance_start_trace()
+    A->>M: performance_start_trace()
     M->>C: CDP Protocol: Tracing.start
-    G->>M: performance_stop_trace()
+    A->>M: performance_stop_trace()
     M->>C: CDP Protocol: Tracing.stop
     C-->>M: Trace Data (JSON)
-    M-->>G: Structured trace data
-    G->>U: "Your LCP is Xms due to Y..."
+    M-->>A: Structured trace data
+    A->>U: "Your LCP is Xms due to Y..."
 ```
 
 ## Advantages over Lighthouse
 
-Unlike Lighthouse, which offers a static snapshot, MCP allows Gemini to:
+Unlike Lighthouse, which offers a static snapshot, MCP allows the agent to:
 
 - **Interact**: Scroll, click, or fill out forms while recording the performance trace.
 - **Deep Context**: Read the project's actual source code to relate a performance issue to a specific line of code.

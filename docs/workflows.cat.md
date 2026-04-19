@@ -1,14 +1,14 @@
 # Workflows Avançats per a Projectes Reals
 
-Aquest document conté exemples de fluxos de treball (workflows) que pots implementar en els teus projectes del dia a dia utilitzant Gemini + Chrome DevTools MCP.
+Aquest document conté exemples de fluxos de treball que pots implementar en els teus projectes del dia a dia utilitzant qualsevol agent de IA + Chrome DevTools MCP.
 
 ## 1. Auditoria de Performance en CI/CD (Headless)
 
-Pots configurar Gemini perquè realitzi una auditoria automàtica en cada Pull Request abans que el codi arribi a producció.
+Pots configurar el teu agent perquè realitzi una auditoria automàtica en cada Pull Request abans que el codi arribi a producció.
 
 ```mermaid
 graph LR
-    A[Git Push / PR] --> B[CI Trigger: Gemini]
+    A[Git Push / PR] --> B[CI Trigger: Agent IA]
     B --> C[MCP: Navegar a Preview URL]
     C --> D[Anàlisi Core Web Vitals]
     D --> E{Regressió > 10%?}
@@ -36,7 +36,7 @@ Ideal per a llocs d'e-commerce o blogs amb molts actius visuals.
 
 ## 3. Detecció de Regressions Visuals i Layout Shift (CLS)
 
-Usa la capacitat de Gemini per a comparar estats del DOM i traces de performance.
+Usa la capacitat de l'agent per a comparar estats del DOM i traces de performance.
 
 **Prompt suggerit:**
 
@@ -58,7 +58,7 @@ graph TD
 
 **Prompt suggerit:**
 
-> "Realitza un anàlisi de xarxa i filtra únicament els dominis de tercers. Calcula quant de temps bloquegen el fil principal en total. Proposa una estratègia de càrrega (ex. `partytown`, `defer`) per als 3 scripts més pesats o impacte en el fil principal."
+> "Realitza un anàlisi de xarxa i filtra únicament els dominis de tercers. Calcula quant de temps bloquegen el fil principal en total. Proposa una estratègia de càrrega (ex. `partytown`, `defer`) per als 3 scripts més pesats o amb més impacte en el fil principal."
 
 > **Nota:** En molts sites, els recursos com imatges o scripts estan en un subdomini o domini diferent, la qual cosa fa que es considerin Third-Party. En tal cas, podem afegir al prompt aquests dominis com a part del projecte.
 
@@ -66,9 +66,9 @@ graph TD
 
 ## Com automatitzar aquests Workflows?
 
-Pots guardar aquests prompts com a **Custom Rules** en el teu projecte (arxiu `GEMINI.md`) perquè l'agent els tingui sempre presents com a protocols d'actuació estàndard.
+Pots guardar aquests prompts com a **Regles** en el teu projecte perquè l'agent els tingui sempre presents com a protocols d'actuació estàndard. Cada eina usa el seu propi format — activa el que correspon al teu agent (veure Exercici 3).
 
-**Exemple de `GEMINI.md`:**
+**Exemple de contingut del fitxer de regles:**
 
 ```markdown
 # Regles de Rendiment del Projecte
@@ -77,5 +77,12 @@ Sempre que analitzis una Pull Request o realitzis un canvi en el codi:
 
 1. Utilitza el **MCP de Chrome DevTools** per a verificar el LCP a `http://localhost:3000`.
 2. Si el LCP supera els 2.5s, executa automàticament la skill `webperf-core-web-vitals` per a trobar la causa.
-3. Assegura't que totes les imatges "Above the fold" en un viewport de mòbil tinguin l'atribut `fetchpriority="high"`, així com la resta d'imatges (Below the fold) tinguin `loading="lazy"`.
+3. Assegura't que totes les imatges "Above the fold" en un viewport de mòbil tinguin l'atribut `fetchpriority="high"`, i la resta (Below the fold) tinguin `loading="lazy"`.
 ```
+
+| Eina | Fitxer de regles |
+|---|---|
+| Gemini CLI | `GEMINI.md` (arrel del projecte) |
+| Claude Code | `CLAUDE.md` (arrel del projecte) |
+| Codex CLI | `AGENTS.md` (arrel del projecte) |
+| Cursor | `.cursor/rules/*.mdc` |

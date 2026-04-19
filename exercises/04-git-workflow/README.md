@@ -1,6 +1,6 @@
 # Exercise 4: Total Automation. Branch, Commit, and PR.
 
-Now that Gemini knows exactly what is failing, we will ask it to fix it following our Git workflow.
+Now that the agent knows exactly what is failing, we will ask it to fix it following our Git workflow.
 
 ## Requirements
 
@@ -12,16 +12,16 @@ Make sure you are on a clean branch (`git checkout -b workshop-start`).
 
 ## Step 2: The Autonomous Fix
 
-Ask Gemini the following:
+Ask your agent:
 
 > "I've seen that the file `demos/sourcemaps-app/src/App.tsx` has a block in the `useEffect`. Create a new branch named `fix/perf-app-lag`, fix the performance issue, commit it, create a Pull Request, and describe the change. Add a `webperf-fix` tag to the PR."
 
-### What Gemini will do:
+### What the agent will do:
 
-1.  Create a git branch.
-2.  Fix the code (e.g., by removing the unnecessary loop).
-3.  Perform `git commit`, `git push`, and create a PR (will require `GitHub CLI`).
-4.  Ask you to review the solution.
+1. Create a git branch.
+2. Fix the code (e.g., by removing the unnecessary loop).
+3. Perform `git commit`, `git push`, and create a PR (will require `GitHub CLI`).
+4. Ask you to review the solution.
 
 **Reflection**:
 

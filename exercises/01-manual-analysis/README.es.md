@@ -1,6 +1,6 @@
 # Ejercicio 1: Análisis Manual. Detectando problemas sin ayuda de la IA.
 
-En este primer paso, vamos a analizar la demo local utilizando el método tradicional (sin Gemini ni MCP).
+En este primer paso, vamos a analizar la demo local utilizando el método tradicional (sin agente de IA ni MCP).
 
 ## Paso 1: Levantar la demo
 

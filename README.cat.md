@@ -1,6 +1,6 @@
-# Workshop: Web Performance Debugging with Gemini + Chrome DevTools MCP
+# Workshop: Web Performance Debugging with AI Agents + Chrome DevTools MCP
 
-![Build [>] debug & deploy with AI](./assets/geminicli.png)
+![Build [>] debug & deploy with AI](./assets/image.webp)
 
 <div align="center">
 
@@ -8,12 +8,12 @@
 
 </div>
 
-Aprèn a diagnosticar i resoldre problemes de rendiment web utilitzant [Google Gemini](https://geminicli.com/) i [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp).
+Aprèn a diagnosticar i resoldre problemes de rendiment web utilitzant agents d'IA i [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp).
 
 ## Agenda
 
 - **1**: Introducció i Anatomia del MCP (Eines exposades al LLM).
-- **2**: Configuració de Gemini + Chrome DevTools MCP.
+- **2**: Configuració de l'Agent d'IA + Chrome DevTools MCP.
 - **3**: **Exercici 1**: Anàlisi Manual. Detectant problemes de rendiment sense ajuda de la IA.
 - **4**: **Exercici 2**: El mur del codi minificat. Usant MCP en entorns de producció (sense Source Maps).
 - **5**: **Exercici 3**: Del Trace al Codi. Ús de Source Maps per identificar el problema exacte.
@@ -37,9 +37,9 @@ Aprèn a diagnosticar i resoldre problemes de rendiment web utilitzant [Google G
 
 ## Requisits Previs
 
-1.  **Google Gemini** (o un client compatible amb MCP).
-2.  **Node.js** instal·lat per a executar el servidor MCP i les demos.
-3.  Coneixements bàsics de **Chrome DevTools** i **Core Web Vitals**.
+1. **Un agent d'IA amb suport MCP**: [Gemini CLI](https://geminicli.com/), [Claude Code](https://claude.ai/code), [Codex CLI](https://github.com/openai/codex), o [Cursor](https://cursor.sh/).
+2. **Node.js** instal·lat per a executar el servidor MCP i les demos.
+3. Coneixements bàsics de **Chrome DevTools** i **Core Web Vitals**.
 
 ## Instal·lació i Configuració
 

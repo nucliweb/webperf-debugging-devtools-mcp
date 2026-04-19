@@ -4,27 +4,27 @@ Abans d'aprofundir en l'anàlisi, és fonamental entendre les dues tecnologies q
 
 ## 1. Què és el Model Context Protocol (MCP)?
 
-El **Model Context Protocol (MCP)** és un estàndard obert que permet als models de IA (com Gemini o Claude) connectar-se de forma segura amb fonts de dades i eines externes. En el nostre cas, el MCP actua com un "driver" que li dóna a Gemini accés directe a les APIs internes de Chrome DevTools.
+El **Model Context Protocol (MCP)** és un estàndard obert que permet als models de IA (com Gemini, Claude o Codex) connectar-se de forma segura amb fonts de dades i eines externes. En el nostre cas, el MCP actua com un "driver" que dona a l'agent accés directe a les APIs internes de Chrome DevTools.
 
-- **Per a què serveix:** Permet que la IA navegui per webs, gravi traces de performance, analitzi la xarxa i capturi captures de pantalla de forma autònoma.
+- **Per a què serveix:** Permet a l'agent navegar per webs, gravar traces de performance, analitzar la xarxa i capturar captures de pantalla de forma autònoma.
 - **Documentació oficial:** [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
 
 ## 2. Què són les Agent Skills?
 
-Les **Agent Skills** són conjunts de coneixements i capacitats predefinides que se li atorguen a un agent de IA. A diferència del MCP (que és la "connexió"), les SKILLs són el "saber fer". Inclouen snippets de codi, fluxos de treball (workflows) i arbres de decisió que guien a la IA per a resoldre problemes específics.
+Les **Agent Skills** són conjunts de coneixements i capacitats predefinides que se li atorguen a un agent de IA. A diferència del MCP (que és la "connexió"), les SKILLs són el "saber fer". Inclouen snippets de codi, fluxos de treball (workflows) i arbres de decisió que guien l'agent per a resoldre problemes específics.
 
-- **Per a què serveix:** Permeten que Gemini sàpiga quins snippets de JavaScript executar si el LCP és lent, com interpretar un waterfall de xarxa o quins suggeriments donar per a optimitzar una imatge.
+- **Per a què serveix:** Permeten a l'agent saber quins snippets de JavaScript executar si el LCP és lent, com interpretar un waterfall de xarxa o quins suggeriments donar per a optimitzar una imatge.
 - **Documentació oficial:** [Agent Skills](https://agentskills.io/)
 
 ---
 
-# Anatomia del MCP: Com interactua Gemini amb Chrome?
+# Anatomia del MCP: Com interactua l'Agent amb Chrome?
 
-El Model Context Protocol (MCP) funciona com un pont estandarditzat entre Gemini i les eines internes de Chrome DevTools.
+El Model Context Protocol (MCP) funciona com un pont estandarditzat entre el teu agent de IA i les eines internes de Chrome DevTools.
 
 ## De Eines a Capacitats del LLM
 
-Quan instal·les el servidor de Chrome DevTools MCP, estàs exposant més de 25 eines directament a Gemini. Algunes de les més interessants per a Web Performance són:
+Quan instal·les el servidor de Chrome DevTools MCP, estàs exposant més de 25 eines directament a l'agent. Algunes de les més interessants per a Web Performance són:
 
 | Eina                      | Acció en Chrome DevTools                                       |
 | :------------------------ | :------------------------------------------------------------- |
@@ -40,25 +40,25 @@ Quan instal·les el servidor de Chrome DevTools MCP, estàs exposant més de 25 
 ```mermaid
 sequenceDiagram
     participant U as Usuari
-    participant G as Gemini
+    participant A as Agent de IA
     participant M as MCP Server
     participant C as Chrome
 
-    U->>G: "Analitza el LCP d'aquesta pàgina"
-    G->>M: navigate_page(url)
+    U->>A: "Analitza el LCP d'aquesta pàgina"
+    A->>M: navigate_page(url)
     M->>C: Protocol CDP: Page.navigate
-    G->>M: performance_start_trace()
+    A->>M: performance_start_trace()
     M->>C: Protocol CDP: Tracing.start
-    G->>M: performance_stop_trace()
+    A->>M: performance_stop_trace()
     M->>C: Protocol CDP: Tracing.stop
     C-->>M: Trace Data (JSON)
-    M-->>G: Dades estructurades del trace
-    G->>U: "El teu LCP és Xms a causa de Y..."
+    M-->>A: Dades estructurades del trace
+    A->>U: "El teu LCP és Xms a causa de Y..."
 ```
 
 ## Avantatges sobre Lighthouse
 
-A diferència de Lighthouse, que ofereix un snapshot estàtic, el MCP permet a Gemini:
+A diferència de Lighthouse, que ofereix un snapshot estàtic, el MCP permet a l'agent:
 
 - **Interactuar**: Fer scroll, click o omplir formularis mentre grava el trace de performance.
 - **Context profund**: Llegir el codi font real del projecte per a relacionar un problema de performance amb una línia de codi específica.
