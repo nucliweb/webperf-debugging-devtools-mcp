@@ -4,6 +4,8 @@ Abans d'aprofundir en l'anàlisi, és fonamental entendre les dues tecnologies q
 
 ## 1. Què és el Model Context Protocol (MCP)?
 
+![Model Context Protocol (MCP)](../assets/mcp-simple-diagram.webp)
+
 El **Model Context Protocol (MCP)** és un estàndard obert que permet als models de IA (com Gemini, Claude o Codex) connectar-se de forma segura amb fonts de dades i eines externes. En el nostre cas, el MCP actua com un "driver" que dona a l'agent accés directe a les APIs internes de Chrome DevTools.
 
 - **Per a què serveix:** Permet a l'agent navegar per webs, gravar traces de performance, analitzar la xarxa i capturar captures de pantalla de forma autònoma.

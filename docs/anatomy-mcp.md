@@ -4,6 +4,8 @@ Before diving into the analysis, it's essential to understand the two technologi
 
 ## 1. What is the Model Context Protocol (MCP)?
 
+![Model Context Protocol (MCP)](../assets/mcp-simple-diagram.webp)
+
 The **Model Context Protocol (MCP)** is an open standard that allows AI models (like Gemini, Claude, or Codex) to securely connect with external data sources and tools. In our case, the MCP acts as a "driver" that gives the agent direct access to the internal APIs of Chrome DevTools.
 
 - **What it's for:** It allows the agent to navigate websites, record performance traces, analyze the network, and capture screenshots autonomously.
@@ -26,14 +28,14 @@ The Model Context Protocol (MCP) works as a standardized bridge between your AI 
 
 When you install the Chrome DevTools MCP server, you are exposing more than 25 tools directly to the agent. Some of the most interesting ones for Web Performance are:
 
-| Tool                      | Action in Chrome DevTools                                  |
-| :------------------------ | :--------------------------------------------------------- |
-| `performance_start_trace` | Starts a recording in the "Performance" panel.             |
-| `performance_stop_trace`  | Stops the recording and processes the trace data.          |
-| `network_list_requests`   | Lists all requests in the "Network" panel.                 |
-| `network_get_request`     | Inspects headers, timing, and response of a request.       |
+| Tool                      | Action in Chrome DevTools                                     |
+| :------------------------ | :------------------------------------------------------------ |
+| `performance_start_trace` | Starts a recording in the "Performance" panel.                |
+| `performance_stop_trace`  | Stops the recording and processes the trace data.             |
+| `network_list_requests`   | Lists all requests in the "Network" panel.                    |
+| `network_get_request`     | Inspects headers, timing, and response of a request.          |
 | `dom_take_snapshot`       | Captures the current state of the DOM and accessibility tree. |
-| `lighthouse_audit`        | Runs audits for accessibility, SEO, and best practices.    |
+| `lighthouse_audit`        | Runs audits for accessibility, SEO, and best practices.       |
 
 ## How Does the Workflow Work?
 
