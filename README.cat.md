@@ -12,14 +12,14 @@ Aprèn a diagnosticar i resoldre problemes de rendiment web utilitzant agents d'
 
 ## Agenda
 
-- **1**: Introducció i Anatomia del MCP (Eines exposades al LLM).
-- **2**: Configuració de l'Agent d'IA + Chrome DevTools MCP.
-- **3**: **Exercici 1**: Anàlisi Manual. Detectant problemes de rendiment sense ajuda de la IA.
-- **4**: **Exercici 2**: El mur del codi minificat. Usant MCP en entorns de producció (sense Source Maps).
-- **5**: **Exercici 3**: Del Trace al Codi. Ús de Source Maps per identificar el problema exacte.
-- **6**: **Exercici 4**: Automatització Total. Rama, Commit i PR amb el fix de rendiment.
-- **7**: **Exercici 5**: Anàlisi Profunda i SKILLs Externes. Coneixement expert i millors pràctiques de Vercel/Next.js.
-- **8**: Q&A i Workflows aplicables a projectes reals.
+- **1**: [Introducció i Anatomia del MCP (Eines exposades al LLM)](docs/anatomy-mcp.cat.md).
+- **2**: [Configuració de l'Agent d'IA + Chrome DevTools MCP](docs/setup.cat.md).
+- **3**: **Exercici 1**: [Anàlisi Manual. Detectant problemes de rendiment sense ajuda de la IA](exercises/01-manual-analysis/README.cat.md).
+- **4**: **Exercici 2**: [El mur del codi minificat. Usant MCP en entorns de producció (sense Source Maps)](exercises/02-mcp-minified/README.cat.md).
+- **5**: **Exercici 3**: [Del Trace al Codi. Ús de Source Maps per identificar el problema exacte](exercises/03-sourcemaps/README.cat.md).
+- **6**: **Exercici 4**: [Automatització Total. Rama, Commit i PR amb el fix de rendiment](exercises/04-git-workflow/README.cat.md).
+- **7**: **Exercici 5**: [Anàlisi Profunda i SKILLs Externes. Coneixement expert i millors pràctiques de Vercel/Next.js](exercises/05-deep-analysis/README.cat.md).
+- **8**: Q&A i [Workflows aplicables a projectes reals](docs/workflows.cat.md).
 
 ## Estructura del Repositori
 

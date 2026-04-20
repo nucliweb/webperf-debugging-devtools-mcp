@@ -12,14 +12,14 @@ Learn to diagnose and resolve web performance issues using AI agents and [Chrome
 
 ## Agenda
 
-- **1**: Introduction and Anatomy of the MCP (Tools exposed to the LLM).
-- **2**: AI Agent + Chrome DevTools MCP Configuration.
-- **3**: **Exercise 1**: Manual Analysis. Detecting performance problems without AI help.
-- **4**: **Exercise 2**: The Minified Code Wall. Using MCP in production environments (without Source Maps).
-- **5**: **Exercise 3**: From Trace to Code. Using Source Maps to identify the exact problem.
-- **6**: **Exercise 4**: Total Automation. Branch, Commit, and PR with the performance fix.
-- **7**: **Exercise 5**: Deep Analysis and External SKILLs. Expert knowledge and best practices from Vercel/Next.js.
-- **8**: Q&A and Workflows applicable to real projects.
+- **1**: [Introduction and Anatomy of the MCP (Tools exposed to the LLM)](docs/anatomy-mcp.md).
+- **2**: [AI Agent + Chrome DevTools MCP Configuration](docs/setup.md).
+- **3**: **Exercise 1**: [Manual Analysis. Detecting performance problems without AI help](exercises/01-manual-analysis/README.md).
+- **4**: **Exercise 2**: [The Minified Code Wall. Using MCP in production environments (without Source Maps)](exercises/02-mcp-minified/README.md).
+- **5**: **Exercise 3**: [From Trace to Code. Using Source Maps to identify the exact problem](exercises/03-sourcemaps/README.md).
+- **6**: **Exercise 4**: [Total Automation. Branch, Commit, and PR with the performance fix](exercises/04-git-workflow/README.md).
+- **7**: **Exercise 5**: [Deep Analysis and External SKILLs. Expert knowledge and best practices from Vercel/Next.js](exercises/05-deep-analysis/README.md).
+- **8**: Q&A and [Workflows applicable to real projects](docs/workflows.md).
 
 ## Repository Structure
 

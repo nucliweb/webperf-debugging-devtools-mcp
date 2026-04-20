@@ -12,14 +12,14 @@ Aprende a diagnosticar y resolver problemas de rendimiento web utilizando agente
 
 ## Agenda
 
-- **1**: Introducción y Anatomía del MCP (Herramientas expuestas al LLM).
-- **2**: Configuración del Agente de IA + Chrome DevTools MCP.
-- **3**: **Ejercicio 1**: Análisis Manual. Detectando problemas de rendimiento sin ayuda de la IA.
-- **4**: **Ejercicio 2**: El muro del código minificado. Usando MCP en entornos de producción (sin Source Maps).
-- **5**: **Ejercicio 3**: Del Trace al Código. Uso de Source Maps para identificar el problema exacto.
-- **6**: **Ejercicio 4**: Automatización Total. Rama, Commit y PR con el fix de rendimiento.
-- **7**: **Ejercicio 5**: Análisis Profundo y SKILLs Externas. Conocimiento experto y mejores prácticas de Vercel/Next.js.
-- **8**: Q&A y Workflows aplicables a proyectos reales.
+- **1**: [Introducción y Anatomía del MCP (Herramientas expuestas al LLM)](docs/anatomy-mcp.es.md).
+- **2**: [Configuración del Agente de IA + Chrome DevTools MCP](docs/setup.es.md).
+- **3**: **Ejercicio 1**: [Análisis Manual. Detectando problemas de rendimiento sin ayuda de la IA](exercises/01-manual-analysis/README.es.md).
+- **4**: **Ejercicio 2**: [El muro del código minificado. Usando MCP en entornos de producción (sin Source Maps)](exercises/02-mcp-minified/README.es.md).
+- **5**: **Ejercicio 3**: [Del Trace al Código. Uso de Source Maps para identificar el problema exacto](exercises/03-sourcemaps/README.es.md).
+- **6**: **Ejercicio 4**: [Automatización Total. Rama, Commit y PR con el fix de rendimiento](exercises/04-git-workflow/README.es.md).
+- **7**: **Ejercicio 5**: [Análisis Profundo y SKILLs Externas. Conocimiento experto y mejores prácticas de Vercel/Next.js](exercises/05-deep-analysis/README.es.md).
+- **8**: Q&A y [Workflows aplicables a proyectos reales](docs/workflows.es.md).
 
 ## Estructura del Repositorio
 
