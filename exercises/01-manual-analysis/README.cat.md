@@ -14,7 +14,7 @@ _Obre http://localhost:3000_
 
 ## Pas 2: Anàlisi Manual
 
-1. Obre **Chrome DevTools** (F12 o `Cmd+Option+I` a Mac).
+1. Obre **Chrome DevTools** (F12 o `Cmd+Option+i` a Mac).
 2. Ves al panell **Performance**.
 3. Inicia la gravació (Dreceres: `Ctrl+E` a Windows/Linux o `Cmd+E` a Mac).
 4. Prem el botó "Executar tasca pesada" a la pàgina.

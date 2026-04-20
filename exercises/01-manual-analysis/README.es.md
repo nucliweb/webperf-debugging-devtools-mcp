@@ -14,7 +14,7 @@ _Abre http://localhost:3000_
 
 ## Paso 2: Análisis Manual
 
-1. Abre **Chrome DevTools** (F12 o `Cmd+Option+I` en Mac).
+1. Abre **Chrome DevTools** (F12 o `Cmd+Option+i` en Mac).
 2. Ve al panel **Performance**.
 3. Inicia la grabación (Shortcuts: `Ctrl+E` en Windows/Linux o `Cmd+E` en Mac).
 4. Pulsa el botón "Ejecutar tarea pesada" en la página.

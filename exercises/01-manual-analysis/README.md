@@ -14,7 +14,7 @@ _Open http://localhost:3000_
 
 ## Step 2: Manual Analysis
 
-1. Open **Chrome DevTools** (F12 or `Cmd+Option+I` on Mac).
+1. Open **Chrome DevTools** (F12 or `Cmd+Option+i` on Mac).
 2. Go to the **Performance** panel.
 3. Start recording (Shortcuts: `Ctrl+E` on Windows/Linux or `Cmd+E` on Mac).
 4. Click the "Run heavy task" button on the page.
