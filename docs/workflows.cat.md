@@ -58,7 +58,7 @@ graph TD
 
 **Prompt suggerit:**
 
-> "Realitza un anàlisi de xarxa i filtra únicament els dominis de tercers. Calcula quant de temps bloquegen el fil principal en total. Proposa una estratègia de càrrega (ex. `partytown`, `defer`) per als 3 scripts més pesats o amb més impacte en el fil principal."
+> "Realitza un anàlisi de xarxa i filtra únicament els dominis de tercers. Calcula quant de temps bloquegen el fil principal en total. Proposa una estratègia de càrrega (ex. `defer`) per als 3 scripts més pesats o amb més impacte en el fil principal."
 
 > **Nota:** En molts sites, els recursos com imatges o scripts estan en un subdomini o domini diferent, la qual cosa fa que es considerin Third-Party. En tal cas, podem afegir al prompt aquests dominis com a part del projecte.
 
@@ -80,9 +80,9 @@ Sempre que analitzis una Pull Request o realitzis un canvi en el codi:
 3. Assegura't que totes les imatges "Above the fold" en un viewport de mòbil tinguin l'atribut `fetchpriority="high"`, i la resta (Below the fold) tinguin `loading="lazy"`.
 ```
 
-| Eina | Fitxer de regles |
-|---|---|
-| Gemini CLI | `GEMINI.md` (arrel del projecte) |
+| Eina        | Fitxer de regles                 |
+| ----------- | -------------------------------- |
+| Gemini CLI  | `GEMINI.md` (arrel del projecte) |
 | Claude Code | `CLAUDE.md` (arrel del projecte) |
-| Codex CLI | `AGENTS.md` (arrel del projecte) |
-| Cursor | `.cursor/rules/*.mdc` |
+| Codex CLI   | `AGENTS.md` (arrel del projecte) |
+| Cursor      | `.cursor/rules/*.mdc`            |

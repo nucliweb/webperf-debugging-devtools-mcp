@@ -58,7 +58,7 @@ graph TD
 
 **Prompt sugerido:**
 
-> "Realiza un análisis de red y filtra únicamente los dominios de terceros. Calcula cuánto tiempo bloquean el hilo principal en total. Propón una estrategia de carga (ej. `partytown`, `defer`) para los 3 scripts más pesados o con más impacto en el hilo principal."
+> "Realiza un análisis de red y filtra únicamente los dominios de terceros. Calcula cuánto tiempo bloquean el hilo principal en total. Propón una estrategia de carga (ej. `defer`) para los 3 scripts más pesados o con más impacto en el hilo principal."
 
 > **Nota:** En muchos sites, los recursos como imágenes o scripts están en un subdominio o dominio diferente, lo que hace que se consideren Third-Party. En tal caso, podemos añadir al prompt esos dominios como parte del proyecto.
 
@@ -80,9 +80,9 @@ Siempre que analices una Pull Request o realices un cambio en el código:
 3. Asegúrate de que todas las imágenes "Above the fold" en un viewport de móvil tengan el atributo `fetchpriority="high"`, y el resto (Below the fold) tengan `loading="lazy"`.
 ```
 
-| Herramienta | Archivo de reglas |
-|---|---|
-| Gemini CLI | `GEMINI.md` (raíz del proyecto) |
+| Herramienta | Archivo de reglas               |
+| ----------- | ------------------------------- |
+| Gemini CLI  | `GEMINI.md` (raíz del proyecto) |
 | Claude Code | `CLAUDE.md` (raíz del proyecto) |
-| Codex CLI | `AGENTS.md` (raíz del proyecto) |
-| Cursor | `.cursor/rules/*.mdc` |
+| Codex CLI   | `AGENTS.md` (raíz del proyecto) |
+| Cursor      | `.cursor/rules/*.mdc`           |

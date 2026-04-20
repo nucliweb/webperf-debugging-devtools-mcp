@@ -58,7 +58,7 @@ graph TD
 
 **Suggested Prompt:**
 
-> "Perform a network analysis and filter only third-party domains. Calculate how much total time they block the main thread. Propose a loading strategy (e.g., `partytown`, `defer`) for the top 3 heaviest scripts or those with the most impact on the main thread."
+> "Perform a network analysis and filter only third-party domains. Calculate how much total time they block the main thread. Propose a loading strategy (e.g., `defer`) for the top 3 heaviest scripts or those with the most impact on the main thread."
 
 > **Note:** On many sites, resources like images or scripts are on a subdomain or different domain, which makes them considered Third-Party. In such cases, we can add those domains to the prompt as part of the project.
 
@@ -80,9 +80,9 @@ Whenever you analyze a Pull Request or make a code change:
 3. Ensure all "Above the fold" images in a mobile viewport have the `fetchpriority="high"` attribute, and all other images (Below the fold) have `loading="lazy"`.
 ```
 
-| Tool | Rules file |
-|---|---|
-| Gemini CLI | `GEMINI.md` (project root) |
+| Tool        | Rules file                 |
+| ----------- | -------------------------- |
+| Gemini CLI  | `GEMINI.md` (project root) |
 | Claude Code | `CLAUDE.md` (project root) |
-| Codex CLI | `AGENTS.md` (project root) |
-| Cursor | `.cursor/rules/*.mdc` |
+| Codex CLI   | `AGENTS.md` (project root) |
+| Cursor      | `.cursor/rules/*.mdc`      |
